@@ -1,9 +1,18 @@
-import { AdminComponent } from './admin/admin.component';
-import { AuthGuard } from './core/guards/auth.guard';
-import { AuthService } from './core/services/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgQrScannerModule } from 'angular2-qrscanner';
+
+import { ToastrModule } from 'ngx-toastr';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './core/guards/auth.guard';
+import { AuthService } from './core/services/auth.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,23 +23,16 @@ import { HomeComponent } from './view/home/home.component';
 import { LoginComponent } from './view/login/login.component';
 import { CadastroComponent } from './view/cadastro/cadastro.component';
 
-import { HttpClientModule } from '@angular/common/http';
 import { CategoriasComponent } from './view/categorias/categorias.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.component';
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
 import { CadastroProdutoComponent } from './view/cadastro-produto/cadastro-produto.component';
-import { ToastrModule } from 'ngx-toastr';
-import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ListaProdutosComponent } from './view/lista-produtos/lista-produtos.component';
 import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
-import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 import { PagamentoComponent } from './view/pagamento/pagamento.component';
 import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminGuard } from './core/guards/admin.guard';
 import { TableGuard } from './core/guards/table.guard';
 
