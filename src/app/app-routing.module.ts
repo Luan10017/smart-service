@@ -12,17 +12,16 @@ import { ListaProdutosComponent } from './view/lista-produtos/lista-produtos.com
 
 import { ProdutoComponent } from './view/produto/produto.component';
 import { PagamentoComponent } from './view/pagamento/pagamento.component';
-import { EnderecoComponent } from './view/endereco/endereco.component';
 import { PedidoComponent } from './view/pedido/pedido.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { EsqueceuSenhaComponent } from './view/esqueceu-senha/esqueceu-senha.component';
 import { RedefinirSenhaComponent } from './view/redefinir-senha/redefinir-senha.component';
 import { ProgressBarComponent } from './shared/components/progress-bar/progress-bar.component';
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
-import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-delivery.component';
 import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
 import { AdminGuard } from './core/guards/admin.guard';
+import { TableGuard } from './core/guards/table.guard';
 
 
 
@@ -33,19 +32,13 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent  },
       { path: 'produto/:id', component: ProdutoComponent },
-      { path: 'endereco', component: EnderecoComponent },
-      { path: 'pedido', component: PedidoComponent },
       { path: 'hamburgers', component: CategoriasComponent },
       { path: 'porcoes', component: CategoriasComponent  },
       { path: 'bebidas', component: CategoriasComponent },
       { path: 'bebidasalcolicas', component: CategoriasComponent  },
-      { path: 'editar/cadastro/:id', component: CadastroComponent },
-      { path: 'pagamento', component: PagamentoComponent },
-      { path: 'pedido', component: PedidoComponent },
-      { path: 'pagamento-delivery', component: PagamentoDeliveryComponent },
       { path: '', redirectTo: 'hamburgers', pathMatch: 'full' },
     ],
-    // canActivate: [AuthGuard]
+     canActivate: [TableGuard]
   },
   {
     path: 'admin',
@@ -55,11 +48,13 @@ const routes: Routes = [
       { path: 'cadastro/produtos', component: CadastroProdutoComponent },
       { path: 'editar/produtos/:id', component: CadastroProdutoComponent },
       { path: 'acompanhar/produtos', component: ProgressBarComponent },
-      { path: 'qrcode', component: QrCodeComponent },
       { path: 'pedidos', component: PedidosComponent },
+      { path: 'editar/cadastro/:id', component: CadastroComponent },
     ],
-    canActivate: [AdminGuard]
+    // canActivate: [AdminGuard]
   },
+  { path: 'pagamento', component: PagamentoComponent },
+  { path: 'qrcode', component: QrCodeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },

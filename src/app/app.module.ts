@@ -28,11 +28,11 @@ import { ProgressBarComponent } from './shared/components/progress-bar/progress-
 import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeComponent } from './shared/components/qr-code/qr-code.component';
 import { PagamentoComponent } from './view/pagamento/pagamento.component';
-import { PagamentoDeliveryComponent } from './view/pagamento-delivery/pagamento-delivery.component';
 import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminGuard } from './core/guards/admin.guard';
+import { TableGuard } from './core/guards/table.guard';
 
 
 
@@ -54,7 +54,6 @@ import { AdminGuard } from './core/guards/admin.guard';
     ProgressBarComponent,
     QrCodeComponent,
     PagamentoComponent,
-    PagamentoDeliveryComponent,
     PedidosComponent,
     ErrorComponent
   ],
@@ -76,7 +75,7 @@ import { AdminGuard } from './core/guards/admin.guard';
     NgQrScannerModule,
     ModalModule.forRoot(),
   ],
-  providers: [AuthService, AuthGuard, AdminGuard],
+  providers: [AuthService, AuthGuard, AdminGuard, TableGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
