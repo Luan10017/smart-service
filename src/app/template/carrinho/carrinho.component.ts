@@ -30,17 +30,17 @@ export class CarrinhoComponent implements OnInit {
   }
 
   realizaPedidos(): void{
+
+    // Atendimento remoto
+    this.pedidos.postPedido(this.carrinhoService.carrinho, "1").subscribe(res => {
+      console.log(res)
+    })
     this.carrinhoService.realizaPedidos()
   }
 
   finalizaPedido(): void {
-    // Atendimento remoto
-    this.pedidos.postPedido(this.carrinhoService.carrinho,"794078f5-db12-4a4a-9a7f-448dcf06248a").subscribe(res => {
-      console.log(res)
-    })
-
     // Atendimento presencial
-    // this.router.navigate(['/pagamento'])
+    this.router.navigate(['/pagamento'])
   }
 
   limpaCarrinho(): void {
