@@ -14,6 +14,7 @@ export class AuthService {
 
   private usuarioAutenticado: boolean = false
   private usuarioAdmin: boolean = false
+  private mesaSelecionada: boolean = false
 
   constructor(
     private router: Router,
@@ -56,10 +57,14 @@ export class AuthService {
   }
 
   selectTable(table: String, userName: String){
-    this.usuarioAutenticado = true
-    localStorage.setItem("usuarioAutenticado","true")
+    this.mesaSelecionada = true
+    localStorage.setItem("mesaSelecionada","true")
     localStorage.setItem("nomeUsuario",`${userName}`)
     this.router.navigate(['/'])
+  }
+
+  mesaEstaSelecionada() {
+    return this.mesaSelecionada
   }
 
   usuarioEstaAutenticado(){
