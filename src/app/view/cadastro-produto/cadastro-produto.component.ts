@@ -119,12 +119,16 @@ export class CadastroProdutoComponent implements OnInit {
   rediretoIntoProductList(): void {
     this.toastr.success("Produto cadastrado com sucesso!")
     setTimeout(() => {
-      this.router.navigate(['/administrativo'])
+      this.router.navigate(['/admin/lista/produtos'])
     }, 3000)
   }
 
   changeValue(event: any) {
     this.produto.categoria = event.target.value
+  }
+
+  voltaParaLista() {
+    this.router.navigate(['/admin/lista/produtos'])
   }
 
   public validation(): void {
