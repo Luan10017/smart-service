@@ -35,6 +35,10 @@ import { PedidosComponent } from './view/pedidos/pedidos.component';
 import { ErrorComponent } from './view/error/error.component';
 import { AdminGuard } from './core/guards/admin.guard';
 import { TableGuard } from './core/guards/table.guard';
+import { PedidoConfirmacaoCardComponent } from './shared/components/pedido-confirmacao-card/pedido-confirmacao-card.component';
+import { PedidoPreparacaoCardComponent } from './shared/components/pedido-preparacao-card/pedido-preparacao-card.component';
+import { PedidoEntregandoCardComponent } from './shared/components/pedido-entregando-card/pedido-entregando-card.component';
+import { PedidoConcluidoCardComponent } from './shared/components/pedido-concluido-card/pedido-concluido-card.component';
 
 
 
@@ -57,7 +61,11 @@ import { TableGuard } from './core/guards/table.guard';
     QrCodeComponent,
     PagamentoComponent,
     PedidosComponent,
-    ErrorComponent
+    ErrorComponent,
+    PedidoConfirmacaoCardComponent,
+    PedidoPreparacaoCardComponent,
+    PedidoEntregandoCardComponent,
+    PedidoConcluidoCardComponent
   ],
   imports: [
     BrowserModule,
