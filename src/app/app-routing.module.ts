@@ -38,7 +38,7 @@ const routes: Routes = [
       { path: 'bebidasalcolicas', component: CategoriasComponent  },
       { path: '', redirectTo: 'hamburgers', pathMatch: 'full' },
     ],
-     canActivate: [TableGuard]
+   // canActivate: [TableGuard]
   },
   {
     path: 'admin',
@@ -50,7 +50,7 @@ const routes: Routes = [
       { path: 'pedidos', component: PedidosComponent },
       { path: 'editar/cadastro/:id', component: CadastroComponent },
     ],
-    canActivate: [AdminGuard]
+    //canActivate: [AdminGuard]
   },
   { path: 'qrcode', component: QrCodeComponent },
   { path: 'pagamento', component: PagamentoComponent },
