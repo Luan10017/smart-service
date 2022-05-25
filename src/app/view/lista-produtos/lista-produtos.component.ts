@@ -5,6 +5,7 @@ import { MenuService } from 'src/app/core/services/menu.service';
 import { environment } from 'src/environments/environment';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -23,16 +24,27 @@ export class ListaProdutosComponent implements OnInit {
     private productService: MenuService,
     private modalService: BsModalService,
     private toastr: ToastrService,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
     this.listaProdutos()
+
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+    }, 5000);
   }
 
   listaProdutos(): void {
     this.productService.getItens(this.baseUrl).pipe(map(result => result.data[0].produtos))
-      .subscribe(res => {
-        this.produtos = res
+      .subscribe({
+        next:(res) => {
+          this.produtos = res
+        },
+        error: (error: any) => console.log(error),
+        complete: () => this.spinner.hide()
       })
   }
 

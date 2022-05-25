@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from '@angular/common/http';
@@ -9,6 +9,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './core/guards/auth.guard';
@@ -84,8 +85,10 @@ import { PedidoConcluidoCardComponent } from './shared/components/pedido-conclui
     BsDropdownModule.forRoot(),
     NgQrScannerModule,
     ModalModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [AuthService, AuthGuard, AdminGuard, TableGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
