@@ -30,7 +30,7 @@
             <p>Total</p>
             <p>{{carrinho.total | currency : 'BRL'}}</p>
         </div>
-        <button class="btn btn-danger" (click)="finalizaPedido()">Fechar a conta</button>
+        <button class="btn btn-danger" (click)="finalizaPedido()"  [disabled]="itensPendentes">Fechar a conta</button>
     </div>
     <!-- <button class="btn btn-danger" (click)="limpaCarrinho()"> Limpa</button> -->
 </div>

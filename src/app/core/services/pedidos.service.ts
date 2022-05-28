@@ -16,14 +16,13 @@ export class PedidosService {
 
   constructor(private http: HttpClient) { }
 
-  postPedido(carrinho: Carrinho, idUsuario: string): Observable<any> {
+  postPedido(carrinho: Carrinho, mesa: string): Observable<any> {
+    const baseUrl = `${environment.API}cadastra/pedido/presencial/mesa/${mesa}`
     const pedidoItens = carrinho.itens.map(({id, quantidade}) => ({id_produto: id, quantidade}))
     const pedidoPayload = {
-      id_usuario: idUsuario,
-      produtos: pedidoItens,
-      forma_pagamento: "DEBITO"
+      produtos: pedidoItens
     }
-    return this.http.post<any>(this.baseUrl,pedidoPayload)
+    return this.http.post<any>(baseUrl, pedidoPayload)
   }
 
   getByStatus(baseUrl: string): Observable<any> {
