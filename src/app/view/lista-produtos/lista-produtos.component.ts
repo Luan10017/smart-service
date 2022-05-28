@@ -15,7 +15,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ListaProdutosComponent implements OnInit {
 
   produtos:  Produto[] = []
-  baseUrl = `${environment.API}produtos`
+  baseUrl = `${environment.API}produtos?page=0`
   modalRef!: BsModalRef;
 
   produtoId: string = "";
@@ -34,6 +34,7 @@ export class ListaProdutosComponent implements OnInit {
 
     setTimeout(() => {
       /** spinner ends after 5 seconds */
+      this.spinner.hide()
     }, 5000);
   }
 
