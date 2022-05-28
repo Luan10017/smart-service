@@ -15,15 +15,15 @@ export class PagamentoComponent implements OnInit {
   constructor(private carrinhoService: CarrinhoService) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem("carrinho")) {
+    if (localStorage.getItem("carrinho") && this.carrinhoService.carrinho.length === 0) {
       const itensCarrinho = JSON.parse(localStorage.getItem("carrinho")!) 
       this.carrinhoService.carregaCarrinhoLocalStorage(itensCarrinho)
     }
     if (localStorage.getItem("nomeUsuario")) {
-      this.nomeUsuario = JSON.parse(localStorage.getItem("nomeUsuario")!) 
+      this.nomeUsuario = localStorage.getItem("nomeUsuario") as string
     }
     this.carrinho = this.carrinhoService.carrinho
-    console.log(this.carrinho)
+    console.log(this.carrinho.length)
   }
 
 
