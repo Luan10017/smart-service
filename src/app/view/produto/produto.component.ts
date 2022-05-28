@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { CarrinhoService } from 'src/app/core/services/carrinho.service';
 import { MenuService } from 'src/app/core/services/menu.service';
-import { Product } from 'src/app/shared/models/product.model';
 import { Produto } from 'src/app/shared/models/Produto';
 import { environment } from 'src/environments/environment';
 
@@ -17,7 +17,11 @@ export class ProdutoComponent implements OnInit {
   product!: Produto 
   id!: number 
 
-  constructor(private productService: MenuService, private route: ActivatedRoute,) { }
+  constructor(
+    private productService: MenuService,
+    private route: ActivatedRoute,
+    private carrinhoService: CarrinhoService
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(res => this.id = res.id)
@@ -31,5 +35,8 @@ export class ProdutoComponent implements OnInit {
     })
   }
 
+  adicionarAoCarrinho(produto: Produto) {
+    this.carrinhoService.adicionarAoCarrinho(produto)
+  }
 
 }
