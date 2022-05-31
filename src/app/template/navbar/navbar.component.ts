@@ -83,7 +83,7 @@ export class NavbarComponent implements OnInit {
   }
 
   vaiParaEditarCadastro(): void {
-    this.router.navigate([`/editar/cadastro/${this.idUsuario}`])
+    this.router.navigate([`/admin/editar/cadastro/${this.idUsuario}`])
   }
 
   fazerLogoff(): void {
