@@ -22,8 +22,18 @@ export class PagamentoComponent implements OnInit {
     if (localStorage.getItem("nomeUsuario")) {
       this.nomeUsuario = localStorage.getItem("nomeUsuario") as string
     }
-    this.carrinho = this.carrinhoService.carrinho
-    console.log(this.carrinho.length)
+    const carrinhoPagamento = this.carrinhoService.carrinho.itens.filter( ({realizado}) => realizado === true)
+    this.carrinho.itens = carrinhoPagamento
+    this.atualizaTotal()
+  }
+
+  atualizaTotal(): void {
+    let valorTotal = 0
+    
+    for (let i=0; i < this.carrinho.length; i++) {
+      valorTotal += this.carrinho.itens[i].quantidade * this.carrinho.itens[i].preco
+    }
+    this.carrinho.total = valorTotal
   }
 
 
