@@ -2,9 +2,9 @@
   <nav class="navbar navbar-dark navbar-expand p-0 bg-dark">
       <div class="container-fluid">
           <ul class="navbar-nav d-none d-md-flex mr-auto">
-              <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Delivery</a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Delivery</a></li>
               <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Ótimos Preços</a></li>
-              <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Pratos Todos os Dias</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" data-abc="true">Pratos Todos os Dias</a></li> -->
           </ul>
           <ul class="navbar-nav d-flex align-items-center">
             <li class="nav-item">
@@ -20,7 +20,7 @@
                     <a ngbDropdownToggle class="nav-link dropdown-toggle second-text fw-bold" id="navbarDropdown" aria-expanded="false"  role="button" data-toggle="dropdown" aria-haspopup="true">
                       <i class="fas fa-user me-2"></i>{{nomeUsuario}}
                     </a>
-                    <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+                    <ul *ngIf="isAdmin" ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
                       <li><a ngbDropdownItem (click)="vaiParaEditarCadastro()">Dados Pessoais</a></li>
                       <li><a ngbDropdownItem (click)="fazerLogoff()">Sair <i class="fa fa-power-off" aria-hidden="true" id="sair"></i></a></li>
                     </ul>
