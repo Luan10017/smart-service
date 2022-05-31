@@ -18,8 +18,8 @@ export class CadastroComponent implements OnInit {
 
   form!: FormGroup;
   cliente: Cliente = new Cliente()
-  id!: number 
-  edicao: boolean = false 
+  id!: number
+  edicao: boolean = false
   cadastro: boolean = true
 
 
@@ -30,7 +30,7 @@ export class CadastroComponent implements OnInit {
   }
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private cadastroService: CadastroClienteService,
     private toastr: ToastrService,
     private router: Router,
@@ -43,7 +43,7 @@ export class CadastroComponent implements OnInit {
       this.edicao = true
       this.cadastro = false
       this.route.params.subscribe(res => this.id = res.id)
-      
+
       const baseUrl = `${environment.API}usuario/${this.id}`
 
       this.cadastroService.getUser(baseUrl)
@@ -67,7 +67,7 @@ export class CadastroComponent implements OnInit {
   editarCadastro() {
     const editUser = {...this.cliente}
     delete editUser.nivel_usuario
-    
+
     this.cadastroService.patchUser(`${environment.API}edita/${this.cliente.email}`,editUser)
       .subscribe( res => {
         this.toastr.success("Cadastro atualizado com sucesso!")
