@@ -41,6 +41,8 @@ export class CarrinhoComponent implements OnInit {
           this.carrinhoService.realizaPedidos()
           this.toastr.success("Pedido enviado para a cozinha 😋")
           this.itensPendentes = false
+        }, error => {
+          this.toastr.error("Opa algo deu errado 😥")
         })
     } else {
       this.toastr.error("Opa algo deu errado 😥")
