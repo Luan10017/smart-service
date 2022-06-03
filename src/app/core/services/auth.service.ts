@@ -56,10 +56,11 @@ export class AuthService {
     );
   }
 
-  selectTable(table: String, userName: String){
+  selectTable(table: string, userName: string){
     this.mesaSelecionada = true
     localStorage.setItem("mesaSelecionada","true")
-    localStorage.setItem("nomeUsuario",`${userName}`)
+    localStorage.setItem("mesa", table)
+    localStorage.setItem("nomeUsuario", userName)
     this.router.navigate(['/'])
   }
 
