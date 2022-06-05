@@ -68,6 +68,14 @@ export class AuthService {
     return this.mesaSelecionada
   }
 
+  verificaStatusMesa(mesa: string):  Observable<any> {
+    return this.http.get<any>(`${environment.API}mesa/${mesa}`)
+  }
+  
+  alteraStatusMesaParaOcupado(mesa: string):  Observable<any> {
+    return this.http.patch<any>(`${environment.API}presencial/alterar/status/mesa/${mesa}`,{status:"OCUPADA"})
+  }
+
   usuarioEstaAutenticado(){
     return this.usuarioAutenticado
   }

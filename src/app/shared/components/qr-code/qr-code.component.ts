@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
 
 import { QrScannerComponent } from 'angular2-qrscanner';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -15,7 +16,10 @@ export class QrCodeComponent implements OnInit {
     name: ""
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private toastr: ToastrService
+  ) { }
 
 
   @ViewChild(QrScannerComponent, { static: false })
@@ -54,9 +58,22 @@ export class QrCodeComponent implements OnInit {
       }
     });
 
-    this.qrScannerComponent.capturedQr.subscribe(result => {
-      this.authService.selectTable(result, this.usuario.name)
-      console.log(result, this.usuario.name);
+    this.qrScannerComponent.capturedQr.subscribe(mesa => {
+      this.authService.verificaStatusMesa(mesa)
+        .subscribe(response => {
+          if (response.data[0].status_mesa === "LIVRE") {
+            this.authService.alteraStatusMesaParaOcupado(mesa)
+              .subscribe(sucesso => {
+                this.authService.selectTable(mesa, this.usuario.name)
+              },
+                erro => {
+                  this.toastr.error("Opa algo deu errado 😥")
+                })
+
+          } else {
+            this.toastr.error("Essa mesa está ocupada 😐. Por favor, peça ajuda para um atendente.")
+          }
+        })
     });
   }
 }
