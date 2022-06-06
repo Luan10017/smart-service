@@ -32,10 +32,16 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent  },
       { path: 'produto/:id', component: ProdutoComponent },
+      { path: 'promocoes', component: CategoriasComponent },
       { path: 'hamburgers', component: CategoriasComponent },
       { path: 'porcoes', component: CategoriasComponent  },
       { path: 'bebidas', component: CategoriasComponent },
       { path: 'bebidasalcolicas', component: CategoriasComponent  },
+      { path: 'porcoes', component: CategoriasComponent  },
+      { path: 'sobremesas', component: CategoriasComponent  },
+      { path: 'pizzas', component: CategoriasComponent  },
+
+      { path: 'editar/cadastro/:id', component: CadastroComponent },
       { path: '', redirectTo: 'hamburgers', pathMatch: 'full' },
     ],
    // canActivate: [TableGuard]
