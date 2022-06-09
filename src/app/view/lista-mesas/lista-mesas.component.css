@@ -1,0 +1,13 @@
+.cards_mesa {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 2rem;
+}
+
+.card_mesa {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 10px;
+    background: red;
+  }

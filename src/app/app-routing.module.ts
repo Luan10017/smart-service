@@ -22,6 +22,7 @@ import { ErrorComponent } from './view/error/error.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { AdminGuard } from './core/guards/admin.guard';
 import { TableGuard } from './core/guards/table.guard';
+import { ListaMesasComponent } from './view/lista-mesas/lista-mesas.component';
 
 
 
@@ -51,6 +52,7 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: 'lista/produtos', component: ListaProdutosComponent },
+      { path: 'lista/mesas', component: ListaMesasComponent },
       { path: 'cadastro/produtos', component: CadastroProdutoComponent },
       { path: 'editar/produtos/:id', component: CadastroProdutoComponent },
       { path: 'pedidos', component: PedidosComponent },
