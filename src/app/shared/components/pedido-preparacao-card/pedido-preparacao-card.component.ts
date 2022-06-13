@@ -23,7 +23,7 @@ export class PedidoPreparacaoCardComponent implements OnInit {
 
   patchToEntregando(idPedido: string) {
     const baseUrl = `${environment.API}alterar/status/pedido/${idPedido}`
-    const body = {"status":"ENTREGANDO"}
+    const body = {"status":"CONCLUIDO"}
     this.pedidoService.patchStatus(baseUrl, body)
       .subscribe( res => {
         PedidosService.emitirPedidoStatus.emit("CONCLUIDO")

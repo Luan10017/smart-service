@@ -34,12 +34,8 @@ export class PedidosComponent implements OnInit {
             this.getConfirmados()
             this.getPreparacoes()
             break
-          case "ENTREGANDO":
-            this.getPreparacoes()
-            this.getEntregando()
-            break
           case "CONCLUIDO":
-            this.getEntregando()
+            this.getPreparacoes()
             this.getConcluidos()
             break
         }
