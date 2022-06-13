@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./produto.component.css']
 })
 export class ProdutoComponent implements OnInit {
-  @Input() products: any;
+  // @Input() products: any;
 
   product!: Produto 
   id!: number 
@@ -30,8 +30,6 @@ export class ProdutoComponent implements OnInit {
     this.productService.getItens(baseUrl).pipe(map(result => result.data[0].produtos))
     .subscribe(res => {
       this.product = res[0]
-
-      console.log(this.product)
     })
   }
 
