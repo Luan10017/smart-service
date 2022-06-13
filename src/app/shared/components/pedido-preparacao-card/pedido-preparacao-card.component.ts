@@ -26,7 +26,7 @@ export class PedidoPreparacaoCardComponent implements OnInit {
     const body = {"status":"ENTREGANDO"}
     this.pedidoService.patchStatus(baseUrl, body)
       .subscribe( res => {
-        PedidosService.emitirPedidoStatus.emit("ENTREGANDO")
+        PedidosService.emitirPedidoStatus.emit("CONCLUIDO")
       }, error => {
         this.toastr.error("Opa algo deu errado 😥")
       })
