@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from '@angular/common/http';
@@ -45,7 +45,11 @@ import { MesaComponent } from './view/mesa/mesa.component';
 
 
 
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { ProdutoComponent } from './view/produto/produto.component';
 
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -58,6 +62,7 @@ import { MesaComponent } from './view/mesa/mesa.component';
     EsqueceuSenhaComponent,
     RedefinirSenhaComponent,
     CadastroProdutoComponent,
+    ProdutoComponent,
     AdminComponent,
     ListaProdutosComponent,
     ProgressBarComponent,
@@ -91,7 +96,7 @@ import { MesaComponent } from './view/mesa/mesa.component';
     ModalModule.forRoot(),
     NgxSpinnerModule
   ],
-  providers: [AuthService, AuthGuard, AdminGuard, TableGuard],
+  providers: [AuthService, AuthGuard, AdminGuard, TableGuard, { provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
