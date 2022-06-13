@@ -9,9 +9,9 @@
                 </label>
             </div>
             <p><b>Cliente: </b> {{pedido.nome_cliente}} </p>
-            <p><b>Endereço: </b>  {{pedido.endereco.logradouro}}, {{pedido.endereco.numero}},
-              {{pedido.endereco.bairro}}, {{pedido.endereco.complemento}}, {{pedido.endereco.cidade}}
-              {{pedido.endereco.estado}} {{pedido.endereco.cep}} </p>
+            <p><b>Produtos:</b> 
+                <span *ngFor="let produto of pedido.produtos"><br>{{produto.nome}} | qt: {{produto.quantidade}}</span>
+            </p>
 
             <a class="btn btn-outline-success btn-sm " (click)="patchToPreparando(pedido.id_pedido)">Aceitar</a>
             <a class="btn btn-outline-danger btn-sm m-2" (click)="patchToCancelado(pedido.id_pedido)">Cancelar</a>
