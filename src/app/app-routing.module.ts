@@ -42,8 +42,6 @@ const routes: Routes = [
       { path: 'porcoes', component: CategoriasComponent  },
       { path: 'sobremesas', component: CategoriasComponent  },
       { path: 'pizzas', component: CategoriasComponent  },
-
-      { path: 'editar/cadastro/:id', component: CadastroComponent },
       { path: '', redirectTo: 'hamburgers', pathMatch: 'full' },
     ],
    // canActivate: [TableGuard]
@@ -59,13 +57,13 @@ const routes: Routes = [
       { path: 'editar/produtos/:id', component: CadastroProdutoComponent },
       { path: 'pedidos', component: PedidosComponent },
       { path: 'editar/cadastro/:id', component: CadastroComponent },
+      { path: 'cadastro', component: CadastroComponent },
     ],
     //canActivate: [AdminGuard]
   },
   { path: 'qrcode', component: QrCodeComponent },
   { path: 'pagamento', component: PagamentoComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'cadastro', component: CadastroComponent },
   { path: 'esqueceu-senha', component: EsqueceuSenhaComponent },
   { path: 'redefinir-senha', component: RedefinirSenhaComponent },
   { path: '**', pathMatch: 'full', component: ErrorComponent },

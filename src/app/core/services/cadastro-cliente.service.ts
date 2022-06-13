@@ -9,7 +9,7 @@ import { Cliente } from '../../shared/models/Cliente';
 })
 export class CadastroClienteService {
 
-  baseUrl = `${environment.API}cadastra/cliente`
+  baseUrl = `${environment.API}cadastra/administrador`
   
   constructor(private http: HttpClient) { }
 
