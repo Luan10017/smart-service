@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="d-flex  p-3 my-3 text-white bg-secondary rounded shadow-sm" id="nav">
+      <div class="d-flex align-itens-center mr-auto">
+        <img class="logo" src="/assets/smart-service-branco.png" width="50%"> <span
+        class="logo"></span>
+          <div class="lh-1">
+            <h1 class="mb-0"></h1>
+  
+            <small></small>
+          </div>
+      </div>
+      <div class="p-3">
+        <h3><i class="icon fas fa-hamburger me-2"></i> Listagem de Mesas</h3>
+      </div>
+      <div class="p-3">
+        <a href="admin/pedidos">
+          <button class="btn btn-outline-light">
+            Ir para Pedidos
+         </button>
+      </a>
+      </div>
+      <div class="p-3">
+        <a routerLink="/admin/lista/produtos">
+          <button class="btn btn-outline-light">
+            Ir para Lista de Produtos
+         </button>
+      </a>
+      </div>
+      <div class="p-3">
+        <a href="/home">
+          <button class="btn btn-outline-light">
+            Ir para Home
+         </button>
+      </a>
+      </div>
+  
+    </div>
+  
+    <section classa="mesa_conteiner">
+        <h1>Mesa {{mesa}}</h1>
+        <p>Status: {{status}}</p>
+        <ul>
+            <li *ngFor="let iten of itens">{{iten.nome_produto}}</li>
+        </ul>
+        <h1>Total: {{total}}</h1>
+
+        <div class="controle">
+            <button class="btn btn-danger button-editar" (click)="liberaMesa()">Fechar e liberar a mesa</button>
+        </div>
+    </section>
+  
+  
+  </div>
+  

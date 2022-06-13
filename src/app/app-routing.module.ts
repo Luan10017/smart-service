@@ -23,6 +23,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { AdminGuard } from './core/guards/admin.guard';
 import { TableGuard } from './core/guards/table.guard';
 import { ListaMesasComponent } from './view/lista-mesas/lista-mesas.component';
+import { MesaComponent } from './view/mesa/mesa.component';
 
 
 
@@ -53,6 +54,7 @@ const routes: Routes = [
     children: [
       { path: 'lista/produtos', component: ListaProdutosComponent },
       { path: 'lista/mesas', component: ListaMesasComponent },
+      { path: 'mesa/:id', component: MesaComponent },
       { path: 'cadastro/produtos', component: CadastroProdutoComponent },
       { path: 'editar/produtos/:id', component: CadastroProdutoComponent },
       { path: 'pedidos', component: PedidosComponent },

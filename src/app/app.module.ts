@@ -41,6 +41,7 @@ import { PedidoPreparacaoCardComponent } from './shared/components/pedido-prepar
 import { PedidoEntregandoCardComponent } from './shared/components/pedido-entregando-card/pedido-entregando-card.component';
 import { PedidoConcluidoCardComponent } from './shared/components/pedido-concluido-card/pedido-concluido-card.component';
 import { ListaMesasComponent } from './view/lista-mesas/lista-mesas.component';
+import { MesaComponent } from './view/mesa/mesa.component';
 
 
 
@@ -68,7 +69,8 @@ import { ListaMesasComponent } from './view/lista-mesas/lista-mesas.component';
     PedidoPreparacaoCardComponent,
     PedidoEntregandoCardComponent,
     PedidoConcluidoCardComponent,
-    ListaMesasComponent
+    ListaMesasComponent,
+    MesaComponent
   ],
   imports: [
     BrowserModule,
