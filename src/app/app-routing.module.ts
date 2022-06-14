@@ -28,6 +28,9 @@ import { MesaComponent } from './view/mesa/mesa.component';
 
 
 const routes: Routes = [
+
+  { path: '', redirectTo: 'hamburgers',  pathMatch: 'full'},
+
   {
     path: '',
     component: LayoutComponent,
