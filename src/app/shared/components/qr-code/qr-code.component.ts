@@ -72,6 +72,7 @@ export class QrCodeComponent implements OnInit {
 
           } else {
             this.toastr.error("Essa mesa está ocupada 😐. Por favor, peça ajuda para um atendente.")
+            location.reload()
           }
         })
     });
