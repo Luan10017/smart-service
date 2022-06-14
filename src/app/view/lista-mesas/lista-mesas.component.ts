@@ -17,12 +17,18 @@ export class ListaMesasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getMesas()
+    setInterval(() => {
+      this.getMesas()
+    }, 10000)
+  }
+
+  getMesas() {
     this.mesaService.getMesas()
       .subscribe(res => {
         this.mesas = res.data[0]
       })
   }
-
 
   vaiParaDetalhesMesa(id: string) {
     this.router.navigate([`/admin/mesa/${id}`])
