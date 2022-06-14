@@ -41,7 +41,7 @@ const routes: Routes = [
       { path: 'hamburgers', component: CategoriasComponent },
       { path: 'porcoes', component: CategoriasComponent  },
       { path: 'bebidas', component: CategoriasComponent },
-      { path: 'bebidasalcolicas', component: CategoriasComponent  },
+      { path: 'cervejas', component: CategoriasComponent  },
       { path: 'porções', component: CategoriasComponent  },
       { path: 'sobremesas', component: CategoriasComponent  },
       { path: 'pizzas', component: CategoriasComponent  },
