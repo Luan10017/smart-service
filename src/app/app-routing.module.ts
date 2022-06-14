@@ -42,12 +42,12 @@ const routes: Routes = [
       { path: 'porcoes', component: CategoriasComponent  },
       { path: 'bebidas', component: CategoriasComponent },
       { path: 'bebidasalcolicas', component: CategoriasComponent  },
-      { path: 'porcoes', component: CategoriasComponent  },
+      { path: 'porções', component: CategoriasComponent  },
       { path: 'sobremesas', component: CategoriasComponent  },
       { path: 'pizzas', component: CategoriasComponent  },
       { path: '', redirectTo: 'hamburgers', pathMatch: 'full' },
     ],
-  //  canActivate: [TableGuard]
+   canActivate: [TableGuard]
   },
   {
     path: 'admin',
@@ -62,7 +62,7 @@ const routes: Routes = [
       { path: 'editar/cadastro/:id', component: CadastroComponent },
       { path: 'cadastro', component: CadastroComponent },
     ],
-    // canActivate: [AdminGuard]
+    canActivate: [AdminGuard]
   },
   { path: 'qrcode', component: QrCodeComponent },
   { path: 'pagamento', component: PagamentoComponent },
