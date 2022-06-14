@@ -37,7 +37,7 @@
     </div>
 
     <section class="cards_mesa">
-        <div class="card_mesa" *ngFor="let mesa of mesas" (click)="vaiParaDetalhesMesa(mesa.numero_mesa)">
+        <div class="card_mesa" [ngClass]="{'ocupada': mesa.status_mesa === 'OCUPADA'}" *ngFor="let mesa of mesas" (click)="vaiParaDetalhesMesa(mesa.numero_mesa)">
             <h1>mesa {{mesa.numero_mesa}}</h1>
             <p>{{mesa.valor_total | currency : 'BRL'}}</p>
             <p>{{mesa.status_mesa}}</p>
