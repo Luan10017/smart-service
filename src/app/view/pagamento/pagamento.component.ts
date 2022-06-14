@@ -25,6 +25,10 @@ export class PagamentoComponent implements OnInit {
     const carrinhoPagamento = this.carrinhoService.carrinho.itens.filter( ({realizado}) => realizado === true)
     this.carrinho.itens = carrinhoPagamento
     this.atualizaTotal()
+
+    setTimeout(()=>{
+      localStorage.clear()
+    },5000)
   }
 
   atualizaTotal(): void {
