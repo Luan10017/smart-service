@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MesaService } from 'src/app/core/services/mesa.service';
 
@@ -18,6 +18,7 @@ export class MesaComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private mesaService: MesaService,
     private toastr: ToastrService,
   ) { }
@@ -36,6 +37,7 @@ export class MesaComponent implements OnInit {
     this.mesaService.alteraStatusMesaParaLivre(this.mesa)
       .subscribe(res => {
         this.toastr.success("Mesa fechada com sucesso!")
+        this.router.navigate(['/admin/lista/mesas'])
       },
       error => {
         this.toastr.error("Opa algo deu errado.")
