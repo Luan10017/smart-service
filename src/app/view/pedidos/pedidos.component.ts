@@ -54,7 +54,7 @@ export class PedidosComponent implements OnInit {
     const baseUrl = `${environment.API}pedidos?status=AGUARDANDO_CONFIRMACAO`
     this.pedidoService.getByStatus(baseUrl)
       .subscribe( res => {
-        this.confirmacoes = res.data[0]
+        this.confirmacoes = res.data[0].reverse()
     })
   }
 
@@ -62,7 +62,7 @@ export class PedidosComponent implements OnInit {
     const baseUrl = `${environment.API}pedidos?status=PREPARANDO`
     this.pedidoService.getByStatus(baseUrl)
       .subscribe( res => {
-        this.preparacoes = res.data[0]
+        this.preparacoes = res.data[0].reverse()
     })
   }
 
@@ -70,7 +70,7 @@ export class PedidosComponent implements OnInit {
     const baseUrl = `${environment.API}pedidos?status=ENTREGANDO`
     this.pedidoService.getByStatus(baseUrl)
       .subscribe( res => {
-        this.entregas = res.data[0]
+        this.entregas = res.data[0].reverse()
     })
   }
 
@@ -78,7 +78,7 @@ export class PedidosComponent implements OnInit {
     const baseUrl = `${environment.API}pedidos?status=CONCLUIDO`
     this.pedidoService.getByStatus(baseUrl)
       .subscribe( res => {
-        this.concluidos = res.data[0]
+        this.concluidos = res.data[0].reverse()
     })
   }
 
